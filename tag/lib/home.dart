@@ -1,3 +1,4 @@
+import 'package:analog_clock/analog_clock.dart';
 import "package:flutter/material.dart";
 import "package:get/get.dart";
 
@@ -15,15 +16,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-              icon: const Icon(Icons.lightbulb),
-              onPressed: () {
-                Get.isDarkMode
-                    ? Get.changeTheme(Themes.lightMode)
-                    : Get.changeTheme(Themes.darkMode);
-              })
-        ],
         title: const Text(
           "Tag",
           style: TextStyle(
@@ -34,11 +26,27 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
         elevation: 0,
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.lightbulb),
+              onPressed: () {
+                Get.isDarkMode
+                    ? Get.changeTheme(Themes.lightMode)
+                    : Get.changeTheme(Themes.darkMode);
+              })
+        ],
       ),
 
       //drawer
+      drawer: const Drawer(),
 
       //body
+      body: const Center(
+        child: AnalogClock(
+          showDigitalClock: false,
+          showAllNumbers: true,
+        ),
+      ),
 
       //floating action button
     );
