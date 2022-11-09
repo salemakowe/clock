@@ -41,14 +41,19 @@ class _HomePageState extends State<HomePage> {
       drawer: const Drawer(),
 
       //body
-      body: const Center(
-        child: AnalogClock(
-          showDigitalClock: false,
-          showAllNumbers: true,
-        ),
+      body: AnalogClock(
+        showDigitalClock: false,
+        showAllNumbers: true,
+        useMilitaryTime: true,
+        // datetime: DateTime(year),
+        hourHandColor: Colors.blue,
       ),
 
       //floating action button
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.back_hand),
+      ),
     );
   }
 }
