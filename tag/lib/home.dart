@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
       drawer: const Drawer(),
 
       //body
-      body: AnalogClock(
+      body: const AnalogClock(
         showDigitalClock: false,
         showAllNumbers: true,
         useMilitaryTime: true,
