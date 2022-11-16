@@ -1,6 +1,7 @@
-import 'package:analog_clock/analog_clock.dart';
 import "package:flutter/material.dart";
 import "package:get/get.dart";
+// import 'package:analog_clock/analog_clock.dart';
+import "package:one_clock/one_clock.dart";
 
 import 'widgets/theme.dart';
 
@@ -40,9 +41,19 @@ class _HomePageState extends State<HomePage> {
             showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return const AlertDialog(
-                    content: Text("Set an Alarm"),
-                    shape: RoundedRectangleBorder(
+                  return AlertDialog(
+                    content: Row(
+                      children: [
+                        Text(
+                          "Set an Alarm",
+                          style: TextStyle(
+                            fontFamily: "Orlande",
+                            fontSize: 15,
+                          ),
+                        ),
+                      ],
+                    ),
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                       Radius.circular(20),
                     )),
@@ -54,7 +65,8 @@ class _HomePageState extends State<HomePage> {
       ),
 
       //body
-      body: const AnalogClock(
+      body: AnalogClock(
+        // datetime: DateTime(year),
         showDigitalClock: false,
         showAllNumbers: true,
         useMilitaryTime: true,
