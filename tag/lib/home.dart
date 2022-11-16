@@ -35,10 +35,11 @@ class _HomePageState extends State<HomePage> {
                     : Get.changeTheme(Themes.darkMode);
               })
         ],
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.notifications),
+        ),
       ),
-
-      //drawer
-      drawer: const Drawer(),
 
       //body
       body: const AnalogClock(
