@@ -36,7 +36,19 @@ class _HomePageState extends State<HomePage> {
               })
         ],
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return const AlertDialog(
+                    content: Text("Set an Alarm"),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    )),
+                  );
+                });
+          },
           icon: const Icon(Icons.notifications),
         ),
       ),
