@@ -43,11 +43,11 @@ class _HomePageState extends State<HomePage> {
                 builder: (BuildContext context) {
                   return AlertDialog(
                     content: Row(
-                      children: [
+                      children: const [
                         Text(
                           "Set an Alarm",
                           style: TextStyle(
-                            fontFamily: "Orlande",
+                            fontFamily: "Poppins",
                             fontSize: 15,
                           ),
                         ),
