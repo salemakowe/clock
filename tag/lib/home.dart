@@ -65,19 +65,22 @@ class _HomePageState extends State<HomePage> {
       ),
 
       //body
-      body: AnalogClock(
-        // datetime: DateTime(year),
-        showDigitalClock: false,
-        showAllNumbers: true,
-        useMilitaryTime: true,
-        // datetime: DateTime(year),
-        hourHandColor: Colors.blue,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            DigitalClock(),
+          ],
+        ),
       ),
 
       //floating action button
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.back_hand),
+        child: Icon(
+          Icons.track_changes,
+        ),
       ),
     );
   }
