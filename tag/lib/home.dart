@@ -66,11 +66,32 @@ class _HomePageState extends State<HomePage> {
 
       //body
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            DigitalClock(),
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Card(
+                  color: Colors.yellow,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.89,
+                    height: MediaQuery.of(context).size.height * 0.7,
+                    child: DigitalClock(),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              child: Card(
+                color: Colors.yellow,
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.89,
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: AnalogClock(),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -78,6 +99,7 @@ class _HomePageState extends State<HomePage> {
       //floating action button
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
+        tooltip: "Set an alarm",
         child: Icon(
           Icons.track_changes,
         ),
