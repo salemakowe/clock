@@ -69,26 +69,32 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           scrollDirection: Axis.horizontal,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Card(
-                  color: Colors.yellow,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.89,
-                    height: MediaQuery.of(context).size.height * 0.7,
-                    child: DigitalClock(),
-                  ),
-                ),
-              ],
-            ),
-            Container(
+            Padding(
+              padding: const EdgeInsets.all(20.0),
               child: Card(
                 color: Colors.yellow,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.89,
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: const DigitalClock(),
+                ),
+              ),
+            ),
+
+            //Analog Clock
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Card(
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.89,
                   height: MediaQuery.of(context).size.height * 0.7,
-                  child: AnalogClock(),
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  child: const AnalogClock(
+                    showDigitalClock: false,
+                  ),
                 ),
               ),
             ),
