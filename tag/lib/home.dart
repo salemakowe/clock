@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 // import 'package:analog_clock/analog_clock.dart';
 import "package:one_clock/one_clock.dart";
+import 'package:tag/widgets/alarm.dart';
 
 import 'widgets/theme.dart';
 
@@ -79,7 +80,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           showDialog(
             context: context,
-            builder: (context) => setAlarm(context),
+            builder: (context) => const SetAlarm(),
           );
         },
         tooltip: "Set an alarm",
@@ -87,24 +88,6 @@ class _HomePageState extends State<HomePage> {
           Icons.notification_add_outlined,
         ),
       ),
-    );
-  }
-
-//SetAlarm Dialogue boc
-  AlertDialog setAlarm(BuildContext context) {
-    return AlertDialog(
-      title: const Text("Set an Alarm"),
-      content: const SingleChildScrollView(
-        child: Text("Alarm"),
-      ),
-      actions: [
-        ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          child: const Text("Set"),
-        )
-      ],
     );
   }
 }
