@@ -36,33 +36,10 @@ class _HomePageState extends State<HomePage> {
                     : Get.changeTheme(Themes.darkMode);
               })
         ],
-        leading: IconButton(
-          onPressed: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    content: Row(
-                      children: const [
-                        Text(
-                          "Set an Alarm",
-                          style: TextStyle(
-                            fontFamily: "Poppins",
-                            fontSize: 15,
-                          ),
-                        ),
-                      ],
-                    ),
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    )),
-                  );
-                });
-          },
-          icon: const Icon(Icons.notifications),
-        ),
       ),
+
+      //drawer
+      drawer: const Drawer(),
 
       //body
       body: Center(
@@ -72,7 +49,6 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Card(
-                color: Colors.yellow,
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.89,
                   height: MediaQuery.of(context).size.height * 0.7,
@@ -85,13 +61,9 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Card(
-                child: Container(
+                child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.89,
                   height: MediaQuery.of(context).size.height * 0.7,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
                   child: const AnalogClock(
                     showDigitalClock: false,
                   ),
@@ -104,12 +76,35 @@ class _HomePageState extends State<HomePage> {
 
       //floating action button
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) => setAlarm(context),
+          );
+        },
         tooltip: "Set an alarm",
-        child: Icon(
-          Icons.track_changes,
+        child: const Icon(
+          Icons.notification_add_outlined,
         ),
       ),
+    );
+  }
+
+//SetAlarm Dialogue boc
+  AlertDialog setAlarm(BuildContext context) {
+    return AlertDialog(
+      title: const Text("Set an Alarm"),
+      content: const SingleChildScrollView(
+        child: Text("Alarm"),
+      ),
+      actions: [
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: const Text("Set"),
+        )
+      ],
     );
   }
 }
