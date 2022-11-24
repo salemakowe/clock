@@ -31,6 +31,7 @@ flutter:
 
   assets:
     - assets/img/profileimg1.jpg
+    - assets/img/earth.jpg
   #   - images/a_dot_ham.jpeg
 
 
