@@ -28,7 +28,7 @@ ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: Colors.amber,
   textTheme: const TextTheme(
-    headline3: TextStyle(
+    displaySmall: TextStyle(
       color: Colors.white,
     ),
   ),
@@ -77,14 +77,14 @@ class _HomePageState extends State<HomePage> {
                 Card(
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    child: DigitalClock(
+                    child: const DigitalClock(
                       textScaleFactor: 2.30,
                       // digitalClockTextColor: iconBool ? darkTheme : lightTheme,
                     ),
                   ),
                 ),
 
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
 
