@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "package:one_clock/one_clock.dart";
+import "package:tag/iconChanger.dart.dart";
 import 'package:tag/widgets/alarm.dart';
 
 import 'widgets/theme.dart';
@@ -101,7 +102,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-
         //floating action button
         floatingActionButton: FloatingActionButton(
           onPressed: () {
@@ -110,10 +110,7 @@ class _HomePageState extends State<HomePage> {
               builder: (context) => const SetAlarm(),
             );
           },
-          tooltip: "Set an alarm",
-          child: const Icon(
-            Icons.notification_add_outlined,
-          ),
+          child: const IconChanger(),
         ),
       ),
     );
