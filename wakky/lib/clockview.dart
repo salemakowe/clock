@@ -27,14 +27,19 @@ class ClockPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     //point's coordinates
-    var centerX = size.width / 10;
-    var centerY = size.width / 10;
+    var centerX = size.width / 2;
+    var centerY = size.height / 2;
     var center = Offset(centerX, centerY);
     var radius = min(centerX, centerY);
 
-    var fillBrush = Paint()..color = const Color(0xff444974);
+    var innerCircle = Paint()..color = const Color(0xff444975);
+    var outterCircle = Paint()
+      ..color = const Color(0xffeaecff) //the color of the outter circle
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 12; // the width of the brush for outter circle
 
-    canvas.drawCircle(center, radius, fillBrush);
+    canvas.drawCircle(center, radius - 40, outterCircle);
+    canvas.drawCircle(center, radius - 40, innerCircle);
   }
 
   @override
