@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          const ClockView(),
+          GestureDetector(child: const ClockView()),
           Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
